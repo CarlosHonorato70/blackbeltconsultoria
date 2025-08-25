@@ -1,16 +1,1112 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Black Belt Consultoria - Especialistas em saúde mental corporativa e implementação da NR 01. Transformamos riscos psicossociais em oportunidades de crescimento." />
-    <meta name="keywords" content="NR 01, saúde mental corporativa, riscos psicossociais, consultoria RH, Black Belt" />
-    <title>Black Belt Consultoria - Saúde Mental Corporativa e NR 01</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Belt Consultoria | Saúde Mental Corporativa & NR-01</title>
+    <meta name="description" content="Transformamos riscos psicossociais em alta performance com metodologia exclusiva baseada em artes marciais. Conformidade 100% com a NR-01.">
+    
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --light: #f5f5f5;
+            --text: #333333;
+            --text-light: #777777;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9)), url('./assets/images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--accent);
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: var(--accent);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--accent);
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        /* Stats */
+        .stats {
+            background-color: var(--secondary);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            margin: 20px;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        /* About */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 0 20px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Founders */
+        .founders {
+            background-color: var(--light);
+        }
+        
+        .founders-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .founder-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 400px;
+            transition: transform 0.3s;
+        }
+        
+        .founder-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .founder-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .founder-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .founder-info {
+            padding: 25px;
+        }
+        
+        .founder-info h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .founder-title {
+            color: var(--accent);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .founder-bio {
+            margin-bottom: 20px;
+        }
+        
+        .credentials {
+            margin-top: 15px;
+        }
+        
+        .credentials h4 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .credentials ul {
+            list-style-position: inside;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+        
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .service-header {
+            padding: 20px;
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .service-header h3 {
+            font-size: 22px;
+        }
+        
+        .service-body {
+            padding: 25px;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .service-features li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .service-features li:before {
+            content: "✓";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        /* Process */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        
+        .step {
+            width: 22%;
+            min-width: 200px;
+            text-align: center;
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+        
+        .step h4 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .step p {
+            color: var(--text-light);
+        }
+        
+        /* Stats */
+        .stats-section {
+            background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9)), url('./assets/images/stats-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .stat-card {
+            background-color: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .stat-card-number {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .stat-card-label {
+            font-size: 18px;
+        }
+        
+        /* Contact */
+        .contact {
+            background-color: var(--light);
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            color: var(--accent);
+            font-size: 20px;
+            margin-right: 15px;
+            margin-top: 3px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #ddd;
+            font-size: 14px;
+        }
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .btn {
+                display: block;
+                margin: 10px auto;
+                max-width: 200px;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-text {
+                order: 2;
+                margin-top: 30px;
+            }
+            
+            .step {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            nav {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="./assets/images/logo-blackbelt.jpg" alt="Black Belt Consultoria">
+                Black Belt
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#nr01">NR-01</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mobile-menu">☰</div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Transformamos Riscos Psicossociais em Alta Performance</h1>
+            <p>Aplicamos a disciplina e estratégia das artes marciais para criar ambientes de trabalho saudáveis e produtivos, em total conformidade com a NR-01.</p>
+            <div class="hero-buttons">
+                <a href="#contato" class="btn">Solicitar Consultoria</a>
+                <a href="#nr01" class="btn btn-outline">Entenda a NR-01</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="stats">
+        <div class="container stats-container">
+            <div class="stat-item">
+                <div class="stat-number">9.000+</div>
+                <div class="stat-label">Atendimentos Clínicos</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Conformidade NR-01</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Anos de Experiência</div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="sobre" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre a Black Belt</h2>
+                <p>Filosofia de Vida Aplicada à Saúde Mental Corporativa</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>A Black Belt Consultoria não é uma mera consultoria de SST; é a manifestação viva e prática da filosofia de vida e das trajetórias de maestria, disciplina, resiliência e alta performance de nossos fundadores, aplicada para a vanguarda da saúde mental corporativa.</p>
+                    <h3>Nossa Visão Estratégica</h3>
+                    <p>Transcendemos a conformidade regulatória para forjar culturas organizacionais de excelência humana e produtividade sustentável, posicionando a saúde mental como um imperativo estratégico, conforme a Portaria MTE nº 1.419/2024 e a Lei 14.831/2024.</p>
+                    <p>Aplicamos o princípio do Jiu-Jitsu "Técnica é melhor que força", onde a precisão do diagnóstico e a inteligência da intervenção superam soluções genéricas.</p>
+                </div>
+                <div class="about-image">
+                    <img src="./assets/images/about-team.jpg" alt="Equipe Black Belt">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section founders">
+        <div class="container">
+            <div class="section-title">
+                <h2>Conheça Nossos Fundadores</h2>
+                <p>Especialistas com trajetórias marcantes em psicologia e gestão</p>
+            </div>
+            
+            <div class="founders-container">
+                <div class="founder-card">
+                    <div class="founder-image">
+                        <img src="./assets/images/carlos-honorato.jpg" alt="Carlos Honorato">
+                    </div>
+                    <div class="founder-info">
+                        <h3>Carlos Honorato</h3>
+                        <div class="founder-title">Fundador & Especialista em Psicologia</div>
+                        <div class="founder-bio">
+                            <p>Autoridade inquestionável na resiliência mental e gestão de crises, com profunda compreensão da psique humana forjada em cenários de alta exigência.</p>
+                        </div>
+                        <div class="credentials">
+                            <h4>Credenciais:</h4>
+                            <ul>
+                                <li>9.000+ atendimentos clínicos</li>
+                                <li>Psicanalista e Psicólogo</li>
+                                <li>Especialista em Hipnose Clínica</li>
+                                <li>Ex-Sargento do Exército</li>
+                                <li>Ex-Chefe de Delegacia da PRF</li>
+                                <li>Faixa Preta 4º Grau Jiu-Jitsu</li>
+                                <li>Campeão Mundial de Jiu-Jitsu</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="founder-card">
+                    <div class="founder-image">
+                        <img src="./assets/images/thybere-mendes.jpg" alt="Thyberê Mendes">
+                    </div>
+                    <div class="founder-info">
+                        <h3>Thyberê Mendes</h3>
+                        <div class="founder-title">Fundador & Especialista em Gestão Ágil</div>
+                        <div class="founder-bio">
+                            <p>Complementa com eficiência e adaptabilidade da gestão ágil, traduzindo complexidades em ações executáveis com disciplina das artes marciais.</p>
+                        </div>
+                        <div class="credentials">
+                            <h4>Credenciais:</h4>
+                            <ul>
+                                <li>SCRUM Master Certificado</li>
+                                <li>Especialista em Otimização de Equipes</li>
+                                <li>Experiência em Kings MMA</li>
+                                <li>Faixa Preta Jiu-Jitsu</li>
+                                <li>Faixa Preta Luta Livre</li>
+                                <li>Gestão de Projetos Complexos</li>
+                                <li>Metodologias Ágeis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="servicos" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Serviços</h2>
+                <p>Soluções completas em saúde mental corporativa</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Consultoria Estratégica NR-01</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Implementação Completa e Conformidade com foco em riscos psicossociais, realização de DRPS e AEP/AET, e planos de ação customizados.</p>
+                        <ul class="service-features">
+                            <li>Diagnóstico de Riscos Psicossociais (DRPS)</li>
+                            <li>Programa de Gerenciamento de Riscos (PGR)</li>
+                            <li>Avaliações Ergonômicas (AEP/AET)</li>
+                            <li>Planos de Ação Customizados</li>
+                            <li>Conformidade com Portaria MTE nº 1.419/2024</li>
+                        </ul>
+                        <a href="#contato" class="btn">Saiba Mais</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Diagnóstico de Riscos Psicossociais</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Avaliação Profunda e Científica utilizando metodologia validada internacionalmente para identificar perigos psicossociais.</p>
+                        <ul class="service-features">
+                            <li>Questionários Validados (COPSOQ II)</li>
+                            <li>Entrevistas Estruturadas</li>
+                            <li>Grupos Focais Especializados</li>
+                            <li>Workshops de Identificação</li>
+                            <li>Relatórios Detalhados com Planos de Ação</li>
+                        </ul>
+                        <a href="#contato" class="btn">Saiba Mais</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Treinamento de Lideranças</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Programas customizados para capacitar gestores na identificação e manejo de riscos psicossociais, promovendo ambientes saudáveis.</p>
+                        <ul class="service-features">
+                            <li>Identificação de Riscos Psicossociais</li>
+                            <li>Comunicação Assertiva</li>
+                            <li>Gestão de Conflitos</li>
+                            <li>Prevenção de Assédio</li>
+                            <li>Criação de Ambientes Seguros</li>
+                        </ul>
+                        <a href="#contato" class="btn">Saiba Mais</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Programas de Transformação Cultural</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Implementação de programas que promovem mudança cultural profunda, incentivando bem-estar e prevenindo comportamentos ofensivos.</p>
+                        <ul class="service-features">
+                            <li>Workshops de Inteligência Emocional</li>
+                            <li>Programas de Resiliência</li>
+                            <li>Prevenção de Assédio Moral e Sexual</li>
+                            <li>Cultura de Segurança Psicológica</li>
+                            <li>Ambientes Colaborativos</li>
+                        </ul>
+                        <a href="#contato" class="btn">Saiba Mais</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Mentoria Estratégica</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Sessões personalizadas de mentoria e acompanhamento dos clientes, garantindo a efetividade das implementações.</p>
+                        <ul class="service-features">
+                            <li>Mentoria Individual com Fundadores</li>
+                            <li>Acompanhamento Pós-Implementação</li>
+                            <li>Auditorias de Conformidade</li>
+                            <li>Relatórios de Progresso</li>
+                            <li>Suporte Contínuo</li>
+                        </ul>
+                        <a href="#contato" class="btn">Saiba Mais</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Certificação Empresa Promotora</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Orientação para obtenção do Certificado Empresa Promotora da Saúde Mental, garantindo vantagem competitiva e reconhecimento.</p>
+                        <ul class="service-features">
+                            <li>Adequação aos Critérios da Lei</li>
+                            <li>Documentação Completa</li>
+                            <li>Processo de Certificação</li>
+                            <li>Vantagem de Marca</li>
+                            <li>Atração de Talentos</li>
+                        </ul>
+                        <a href="#contato" class="btn">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nosso Processo de Implementação</h2>
+                <p>Metodologia comprovada que garante resultados sustentáveis e conformidade total com a NR-01</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <h4>Diagnóstico</h4>
+                    <p>Avaliação completa dos riscos psicossociais</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <h4>Planejamento</h4>
+                    <p>Desenvolvimento de estratégias customizadas</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <h4>Implementação</h4>
+                    <p>Execução das soluções com acompanhamento</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">04</div>
+                    <h4>Monitoramento</h4>
+                    <p>Avaliação contínua e ajustes necessários</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="nr01" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>NR-01 e Saúde Mental</h2>
+                <p>Entenda a importância da nova regulamentação para sua empresa</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>O que é a NR-01?</h3>
+                    <p>A Norma Regulamentadora 01 estabelece as disposições gerais sobre Segurança e Saúde no Trabalho (SST). Com a atualização de 2024, passou a incluir obrigatoriamente os riscos psicossociais no Programa de Gerenciamento de Riscos (PGR).</p>
+                    
+                    <h4>Principais Mudanças:</h4>
+                    <ul class="service-features">
+                        <li>Inclusão Obrigatória de riscos psicossociais no GRO/PGR</li>
+                        <li>Documentação: Registros e evidências obrigatórias</li>
+                        <li>Participação: Envolvimento dos trabalhadores</li>
+                    </ul>
+                    
+                    <h3>Impactos dos Riscos Psicossociais</h3>
+                    <p>Os números mostram a urgência da adequação à NR-01:</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-card-number">40%</div>
+                            <div class="stat-card-label">Aumento no absenteísmo por problemas psicossociais</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-number">60%</div>
+                            <div class="stat-card-label">Redução possível com programas adequados</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card-number">R$ 1 tri</div>
+                            <div class="stat-card-label">Custo global anual dos problemas de saúde mental</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="./assets/images/nr01-infographic.jpg" alt="NR-01 Infográfico">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="stats-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Resultados Comprovados</h2>
+                <p>Veja os impactos positivos que nossas soluções trouxeram para empresas como a sua</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card-number">60%</div>
+                    <div class="stat-card-label">Redução no absenteísmo</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-number">35%</div>
+                    <div class="stat-card-label">Aumento da produtividade</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-number">80%</div>
+                    <div class="stat-card-label">Melhora do clima organizacional</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-number">95%</div>
+                    <div class="stat-card-label">Satisfação dos colaboradores</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contato" class="section contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Fale Conosco</h2>
+                <p>Estamos prontos para transformar sua empresa</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <p>Rua Exemplo, 123 - Centro<br>São Paulo, SP - 01234-567</p>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <p>(11) 98765-4321</p>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <p>contato@blackbeltconsultoria.com</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form action="submit_form.php" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-col">
+                <a href="#" class="logo">
+                    <img src="./assets/images/logo-blackbelt.jpg" alt="Black Belt Consultoria">
+                    Black Belt
+                </a>
+                <p>Transformando a saúde mental corporativa com a disciplina das artes marciais.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Navegação</h4>
+                <ul class="footer-links">
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#nr01">NR-01</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Serviços</h4>
+                <ul class="footer-links">
+                    <li><a href="#servicos">Consultoria NR-01</a></li>
+                    <li><a href="#servicos">Treinamento de Lideranças</a></li>
+                    <li><a href="#servicos">Mentoria Estratégica</a></li>
+                    <li><a href="#servicos">Programas Culturais</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <ul class="footer-links">
+                    <li><a href="#">(11) 98765-4321</a></li>
+                    <li><a href="#">contato@blackbeltconsultoria.com</a></li>
+                    <li><a href="#">Rua Exemplo, 123</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2024 Black Belt Consultoria. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scroll for anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
 </html>
-
