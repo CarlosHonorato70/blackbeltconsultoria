@@ -342,6 +342,12 @@
             margin: 20px 0;
         }
 
+        .service-features li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
         .service-features li:before {
             content: "✓";
             color: var(--accent);
@@ -983,124 +989,4 @@
                     <div class="stat-card-label">Aumento da produtividade</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-card-number">80%</div>
-                    <div class="stat-card-label">Melhora do clima organizacional</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-card-number">95%</div>
-                    <div class="stat-card-label">Satisfação dos colaboradores</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contato" class="section contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Fale Conosco</h2>
-                <p>Estamos prontos para transformar sua empresa</p>
-            </div>
-
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Informações de Contato</h3>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <span class="contact-icon">📍</span>
-                            <p>Rua Exemplo, 123 - Centro<br>São Paulo, SP - 01234-567</p>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">📞</span>
-                            <p>(11) 98765-4321</p>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">✉️</span>
-                            <p>contato@blackbeltconsultoria.com</p>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                    </div>
-                </div>
-
-                <div class="contact-form">
-                    <form action="submit_form.php" method="POST">
-                        <div class="form-group">
-                            <label for="name">Nome Completo</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">E-mail</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Mensagem</label>
-                            <textarea id="message" name="message" class="form-control" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Enviar Mensagem</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container footer-container">
-            <div class="footer-col">
-                <a href="#" class="logo">
-                    <img src="./assets/images/logo-blackbelt.jpg" alt="Black Belt Consultoria">
-                    Black Belt
-                </a>
-                <p>Transformando a saúde mental corporativa com a disciplina das artes marciais.</p>
-            </div>
-
-            <div class="footer-col">
-                <h4>Navegação</h4>
-                <ul class="footer-links">
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#nr01">NR-01</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4>Serviços</h4>
-                <ul class="footer-links">
-                    <li><a href="#servicos">Consultoria NR-01</a></li>
-                    <li><a href="#servicos">Treinamento de Lideranças</a></li>
-                    <li><a href="#servicos">Mentoria Estratégica</a></li>
-                    <li><a href="#servicos">Programas Culturais</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4>Contato</h4>
-                <ul class="footer-links">
-                    <li><a href="#">(11) 98765-4321</a></li>
-                    <li><a href="#">contato@blackbeltconsultoria.com</a></li>
-                    <li><a href="#">Rua Exemplo, 123</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="copyright">
-            <p>&copy; 2024 Black Belt Consultoria. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scroll for anchors
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+}
